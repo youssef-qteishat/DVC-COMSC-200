@@ -101,16 +101,6 @@ RationalNumber RationalNumber::operator/(RationalNumber r2) {
 	return quotient;
 }
 
-const RationalNumber RationalNumber::operator=(RationalNumber& r2) {
-	int newNumerator, int newDenominator;
-	this->numerator = r2.numerator;
-	this->denominator = r2.denominator;
-	newNumerator = this->numerator;
-	newDenominator = this->denominator;
-
-	RationalNumber new(newNumerator, newDenominator);
-}
-
 bool RationalNumber::operator>( const RationalNumber& r2) { /* given that we are overloading in the class,
 															we can directly access numerator and denominator without get functions.*/
 
@@ -131,6 +121,107 @@ bool RationalNumber::operator>( const RationalNumber& r2) { /* given that we are
 		}
 	}
 }
+
+bool RationalNumber::operator>=(const RationalNumber& r2) { 
+
+	if (this->denominator == r2.denominator) {
+		if (this->numerator >= r2.numerator) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	else {
+		if (this->getNumerator() * r2.denominator >= r2.numerator * this->denominator) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+}
+
+bool RationalNumber::operator<(const RationalNumber& r2) {
+
+	if (this->denominator == r2.denominator) {
+		if (this->numerator < r2.numerator) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	else {
+		if (this->getNumerator() * r2.denominator < r2.numerator * this->denominator) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+}
+
+bool RationalNumber::operator<=(const RationalNumber& r2) { 
+
+	if (this->denominator == r2.denominator) {
+		if (this->numerator <= r2.numerator) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	else {
+		if (this->getNumerator() * r2.denominator <= r2.numerator * this->denominator) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+}
+
+bool RationalNumber::operator==(const RationalNumber& r2) {
+
+	if (this->denominator == r2.denominator) {
+		if (this->numerator == r2.numerator) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	else {
+		if (this->getNumerator() * r2.denominator == r2.numerator * this->denominator) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+}
+
+bool RationalNumber::operator!=(const RationalNumber& r2) {
+
+	if (this->denominator == r2.denominator) {
+		if (this->numerator != r2.numerator) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	else {
+		if (this->getNumerator() * r2.denominator != r2.numerator * this->denominator) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+}
+
 
 int RationalNumber::getNumerator() {
 	return numerator;
