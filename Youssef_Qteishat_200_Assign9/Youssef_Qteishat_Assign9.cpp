@@ -5,20 +5,13 @@ using namespace std;
 
 int main()
 {
-    RationalNumber x(3, 9);
-    cout << x.getNumerator() << endl;
-    cout << x.getDenominator() << endl;
-
-    /*
-    RationalNumber c(7, 3), d(3, 9), x;
-
+    RationalNumber c(2, 7), d(5, 11), x(1,1);
     c.printRational();
     cout << " + ";
     d.printRational();
     cout << " = ";
     x = c + d; // test overloaded operators + and =
     x.printRational();
-
     cout << '\n';
     c.printRational();
     cout << " - ";
@@ -26,7 +19,6 @@ int main()
     cout << " = ";
     x = c - d; // test overloaded operators - and =
     x.printRational();
-
     cout << '\n';
     c.printRational();
     cout << " * ";
@@ -34,7 +26,6 @@ int main()
     cout << " = ";
     x = c * d; // test overloaded operators * and =
     x.printRational();
-
     cout << '\n';
     c.printRational();
     cout << " / ";
@@ -42,43 +33,34 @@ int main()
     cout << " = ";
     x = c / d; // test overloaded operators / and =
     x.printRational();
-
     cout << '\n';
     c.printRational();
     cout << " is:\n";
-
     // test overloaded greater than operator
     cout << ((c > d) ? "  > " : "  <= ");
     d.printRational();
     cout << " according to the overloaded > operator\n";
-
     // test overloaded less than operator
     cout << ((c < d) ? "  < " : "  >= ");
     d.printRational();
     cout << " according to the overloaded < operator\n";
-
     // test overloaded greater than or equal to operator
     cout << ((c >= d) ? "  >= " : "  < ");
     d.printRational();
     cout << " according to the overloaded >= operator\n";
-
     // test overloaded less than or equal to operator
     cout << ((c <= d) ? "  <= " : "  > ");
     d.printRational();
     cout << " according to the overloaded <= operator\n";
-
     // test overloaded equality operator
     cout << ((c == d) ? "  == " : "  != ");
     d.printRational();
     cout << " according to the overloaded == operator\n";
-
     // test overloaded inequality operator
     cout << ((c != d) ? "  != " : "  == ");
     d.printRational();
     cout << " according to the overloaded != operator" << endl;
-
     cin.get();
     // system("PAUSE");
-    */
     return 0;
 } // end main
