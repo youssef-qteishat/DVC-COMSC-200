@@ -15,9 +15,13 @@ RationalNumber::RationalNumber(int n, int d) {/* #10 this constructor should def
 		denominator = abs(d);
 		numerator = n * -1;
 	}
+	else if (d < 0 && n < 0){
+		denominator = abs(d);
+		numerator = abs(n);
+	}
 	int z = getGCD(abs(n), abs(d));
-	numerator = n / z;
-	denominator = d / z;
+	numerator = numerator / z;
+	denominator = numerator / z;
 }
 
 int RationalNumber::getGCD(int num1, int num2) { // #13 function for finding the GCD to use in constructor in setting numerator and denominator
